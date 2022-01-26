@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Amigo Urso</title>
+    <base target="_blank" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Rubik">
+    <link rel="stylesheet" type="text/css" href="assets/css/AmigoUrso.css" />
+</head>
+
+<body>
+    <header>
+        <address class="ender">
+            Rua Apis Mellifera, 1<br />
+            Tel: (21) 91122-3344<br />
+            <a href="mailto:contato@zangao.com.br">
+                contato@zangao.com.br</a>
+        </address>
+        <img class="imgLogo" src="assets/images/AmigoUrso_topo.png" /><br />
+    </header>
+    <nav>
+        <ul>
+            <li><a href="AmigoUrso.html">Apresentação</a></li>
+            <li><a href="Demel.html">Mistura de Mel</a></li>
+            <li><a href="Dabel.html">Direto da Abelha</a></li>
+            <li><a href="Pedidos.html">Pedidos</a></li>
+        </ul>
+    </nav>
+    <section>
+        <br />
+        <table class="tabDabel">
+            <tr>
+                <th colspan="4" class="titulo">Produtos Direto da
+                    Abelha</th>
+            </tr>
+            <tr>
+                <th class="linTH">Produto</th>
+                <th class="linTH">Tipo</th>
+                <th class="linTH">Descrição</th>
+            </tr>
+            <tr>
+                <th rowspan="3" class="colTH">
+                    Pote de Mel</th>
+                <td><a target="_self" style="color: #AA0000;" href="javascript:Mostra(1);">Flores Silvestres</a></td>
+                <td class="imgCel" rowspan="5">
+                    <div id="titDes"></div>
+                    <img id="imgDes" src="assets/images/vazio.jpg" />
+                    <div id="proDes" class="preco">&nbsp;</div>
+                    </th>
+                </td>
+            </tr>
+            <tr>
+                <td><a target="_self" style="color: #AA0000;" href="javascript:Mostra(2);">Eucalipto</a></td>
+                </td>
+            </tr>
+            <tr>
+                <td><a target="_self" style="color: #AA0000;" href="javascript:Mostra(3);">Flor de Laranjeira</a></td>
+            </tr>
+            <tr>
+                <th rowspan="2" class="colTH">
+                    Própolis</th>
+                <td><a target="_self" style="color: #AA0000;" href="javascript:Mostra(4);">Extrato</a></td>
+            </tr>
+            <tr>
+                <td><a target="_self" style="color: #AA0000;" href="javascript:Mostra(5);">Spray</a></td>
+            </tr>
+
+        </table>
+    </section>
+
+    <script>
+        var tabProdutos = [
+            ["&nbsp;", "vazio", 0],
+            ["<div class='imgPreco'>Flores Silvestres </br> (350g) </div>",
+                "MelSilvestre100", "20,00"],
+            ["<div class='imgPreco'> Eucalipto </br>(450g)</div>", "MelEucalipto100",
+                "25,00"],
+            ["<div class='imgPreco'> Flor de Laranjeiras </br>(750g) </div>",
+                "MelLaranja100", "40,00"],
+            ["<div class='imgPreco'> Extrato </br> (30ml) </div>",
+                "Propol100", "16,00"],
+            ["<div class='imgPreco'> Spray </br> (35ml) </div>",
+                "Spray100", "9,00"]];
+
+
+        function Mostra(ind) {
+            var titulo = document.getElementById("titDes");
+            var imagem = document.getElementById("imgDes");
+            var preco = document.getElementById("proDes");
+
+            titulo.innerHTML = tabProdutos[ind][0];
+            imagem.src = "assets/images/" + tabProdutos[ind][1] + ".jpg";
+            preco.innerHTML = "<div class='imgPreco'>Preço:</div>" + "R$ " + tabProdutos[ind][2];
+        }
+    </script>
+
+</body>
+
+</html>

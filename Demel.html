@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Amigo Urso</title>
+    <base target="_blank" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Rubik">
+    <link rel="stylesheet" type="text/css" href="assets/css/AmigoUrso.css" />
+</head>
+
+<body>
+    <header>
+        <address class="ender">
+            Rua Apis Mellifera, 1<br />
+            Tel: (21) 91122-3344<br />
+            <a href="mailto:contato@zangao.com.br">
+                contato@zangao.com.br</a>
+        </address>
+        <img class="imgLogo" src="assets/images/AmigoUrso_topo.png" /><br />
+    </header>
+    <nav>
+        <ul>
+            <li><a href="AmigoUrso.html">Apresentação</a></li>
+            <li><a href="Demel.html">Mistura de Mel</a></li>
+            <li><a href="Dabel.html">Direto da Abelha</a></li>
+            <li><a href="Pedidos.html">Pedidos</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h3 class="Titulo">Mistura de Mel</h3>
+        <ol class="listaComMel">
+            <li>Iogurte:
+                <ul>
+                    <li><a target="_self" href="javascript:MostraDemel(0, 0);">Natural com mel </a>
+                    </li>
+                    <li><a target="_self" href="javascript:MostraDemel(1, 0);">Zero lactose </a>
+                    </li>
+                </ul>
+            </li>
+            <li>Balas:
+                <ul>
+                    <li><a target="_self" href="javascript:MostraDemel(2, 0);">Gengibre e Mel </a>
+                    </li>
+                    <li><a target="_self" href="javascript:MostraDemel(3, 0);">Mel e Anis </a>
+                    </li>
+                </ul>
+            </li>
+            <li>Barra de Cereal:
+                <ul>
+                    <li><a target="_self" href="javascript:MostraDemel(4, 0);">Mel e Granola </a>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <script>
+
+        var tabtps = new Array(5);
+        var tabDemel = new Array(5);
+
+
+        tabtps = ["Natural com mel", "Zero Lactose",
+            "Gengibre e Mel", "Mel e Anis",
+            "Mel e Granola"];
+
+        tabDemel[0] = [["IogurteNatMel100",
+            "Iogurte",
+            "130g", "8,00"]];
+        tabDemel[1] = [["Iogurtezerolac100",
+            "Iogurte",
+            "150g", "3,00"]];
+        tabDemel[2] = [["BalaGengibre100",
+            "Iogurte",
+            "60g", "6,00"]];
+        tabDemel[3] = [["BalaAnis100",
+            "Iogurte",
+            "60g", "6,00"]];
+        tabDemel[4] = [["BarraGranAveiaMel100",
+            "Iogurte",
+            "25g", "1,50"]];
+
+
+        function MostraDemel(tp, ms) {
+            var ggf = "https://fonts.googleapis.com/css?family=";
+            var jan = open("", tabtps[tp],
+                "location=no,status=no," +
+                "width=345,height=447");
+            with (jan.document) {
+                write("<html><head><title>Amigo Urso</title>");
+                write("<link rel='stylesheet' type='text/css'");
+                write("href='" + ggf + "Stoke' />");
+                write("<link rel='stylesheet' type='text/css'");
+                write(" href='" + ggf + "Raleway' />");
+                write("<link rel='stylesheet' type='text/css' ");
+                write(" href='assets/css/AmigoUrso.css' />");
+                write("<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato|Rubik'/>")
+                write("</head><body>");
+                write("<div class='janinfo'>");
+                write("<h3>", tabDemel[tp][ms][1], "</h3>");
+                write("<img class='janInfoImg' src='assets/images/");
+                write(tabDemel[tp][ms][0]);
+                write(".jpg' /><p>");
+                write("<div class='janinfoDetalhe'><h5><p>Tipo: ", tabtps[tp], "</p></h5>");
+                write("<h5><p>Qtd: ", tabDemel[tp][ms][2], "</p></h5>");
+                write("<h5><p>Preço: R$ ", tabDemel[tp][ms][3], "</p></h5></div>");
+                write("<input type='button' value='Fechar' ");
+                write("onClick='window.close();'/>");
+                write("</form></div><br/>");
+                write("</body></html>");
+                close();
+            }
+        }
+
+    </script>
+</body>
+
+</html>
